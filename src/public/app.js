@@ -39,6 +39,7 @@ async function carregarDashboard() {
 
   dados.historico.slice().reverse().forEach((t) => {
     const item = document.createElement('li');
+    item.classList.add(t.tipo);
     item.textContent = `${t.descricao} - ${t.categoria} - ${t.tipo} - ${formatar(t.valor)}`;
     lista.appendChild(item);
   });

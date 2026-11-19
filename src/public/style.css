@@ -1,16 +1,36 @@
+:root {
+  --azul: #1f3a5f;
+  --verde: #2e7d32;
+  --vermelho: #d32f2f;
+  --fundo: #f4f6f8;
+}
+
 * {
   box-sizing: border-box;
 }
 
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   margin: 0;
   padding: 16px;
-  background: #f4f6f8;
+  background: var(--fundo);
   color: #222;
 }
 
+input, select, button {
+  font-family: inherit;
+}
+
+header {
+  background: var(--azul);
+  padding: 16px 16px;
+  margin: -16px -16px 16px;
+}
+
 header h1 {
+  margin: 0;
+  color: #fff;
   text-align: center;
 }
 
@@ -19,6 +39,7 @@ section {
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -32,15 +53,26 @@ input[type="number"],
 select {
   padding: 12px;
   font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  input:focus, select:focus {
+    outline: 2px solid var(--azul);
+    border-color: var(--azul);
+  }
 }
 
 button {
   padding: 12px;
   font-size: 1rem;
-  background: #1f3a5f;
+  background: var(--azul);
   color: #fff;
   border: none;
   border-radius: 6px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 #metricas {
@@ -55,10 +87,24 @@ button {
   padding: 12px;
   background: #eef3f8;
   border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--azul);
+}
+
+.cartao:nth-of-type(2) {
+  border-left-color: gray;
+}
+
+.cartao:nth-of-type(3) {
+  border-left-color: var(--vermelho);
+}
+
+.cartao strong {
+  font-size: 1.3rem;
 }
 
 #total-impulso {
-  color: red;
+  color: var(--vermelho);
 }
 
 /* Extrato */
@@ -71,6 +117,10 @@ button {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
 }
+
+#lista-extrato li.receita { border-left: 4px solid var(--verde); }
+#lista-extrato li.despesa { border-left: 4px solid var(--vermelho); }
+#lista-extrato li { padding-left: 8px; }
 
 @media (min-width: 768px) {
   main {
