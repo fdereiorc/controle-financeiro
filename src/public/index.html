@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Controle Financeiro</h1>
+  </header>
+
+  <main>
+    <section id="formulario">
+      <h2>Nova transação</h2>
+      <form id="form-transacao">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" required>
+
+        <label for="valor">Valor</label>
+        <input type="number" id="valor" step="0.01" required>
+
+        <label for="tipo">Tipo</label>
+        <select id="tipo">
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+
+        <label for="categoria">Categoria</label>
+        <input type="text" id="categoria" required>
+
+        <label>
+          <input type="checkbox" id="consciente" checked>
+          Gasto consciente (essencial)
+        </label>
+
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+
+    <section id="metricas">
+      <h2>Painel de métricas</h2>
+      <div class="cartao">
+        <span>Saldo total</span>
+        <strong id="saldo-total">-</strong>
+      </div>
+      <div class="cartao">
+        <span>Total de despesas</span>
+        <strong id="total-despesas">-</strong>
+      </div>
+      <div class="cartao">
+        <span>Total de impulso</span>
+        <strong id="total-impulso">-</strong>
+      </div>
+    </section>
+
+    <section id="extrato">
+      <h2>Extrato</h2>
+      <ul id="lista-extrato"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

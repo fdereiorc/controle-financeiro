@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background: #f4f6f8;
+  color: #222;
+}
+
+header h1 {
+  text-align: center;
+}
+
+section {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 12px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  font-size: 1rem;
+  background: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+#metricas {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.cartao {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #eef3f8;
+  border-radius: 6px;
+}
+
+#total-impulso {
+  color: red;
+}
+
+/* Extrato */
+#lista-extrato {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-extrato li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    #extrato {
+      grid-column: 1 / -1;
+    }
+  }
+}
